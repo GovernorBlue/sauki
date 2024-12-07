@@ -1,0 +1,31 @@
+<script lang="ts" setup>
+import { navbarData } from '~/data'
+
+useHead({
+  title: 'Home',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Welcome To My Blog Site. Get Web Development, Javascript, Typescript, NodeJs, Vue, and Nuxt, Related Articles, Tips, Learning resources and more.',
+    },
+  ],
+})
+
+// Generate OG Image
+defineOgImageComponent('About', {
+  headline: 'Greetings 👋',
+  title: navbarData.homeTitle,
+  description:
+    'Dive into Medicine, Healthcare, lifestyle & Problem Solving with me and let us learn together.',
+  link: '/urbluedr.jpeg',
+})
+</script>
+
+<template>
+  <main class="container max-w-5xl mx-auto text-zinc-600">
+    <MainHero />
+    <MainRecent />
+    <MainTrending />
+  </main>
+</template>
