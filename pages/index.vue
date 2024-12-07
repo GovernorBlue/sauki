@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { navbarData } from '~/data'
+import { navbarData, homePage } from '~/data'
 
 useHead({
   title: 'Home',
@@ -14,10 +14,9 @@ useHead({
 
 // Generate OG Image
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
+  headline: homePage.headline,
   title: navbarData.homeTitle,
-  description:
-    'Dive into Medicine, Healthcare, lifestyle & Problem Solving with me and let us learn together.',
+  description: homePage.description,
   link: '/urbluedr.jpeg',
 })
 </script>

@@ -13,6 +13,7 @@ export const footerData = {
 
 export const homePage = {
   title: 'Welcome To My Blog Site',
+  headline: 'Greetings 👋',
   description:
     'Get Medicine, Healthcare and lifestyle Related Articles, Tips, Learning resources and more.',
 }
@@ -36,7 +37,7 @@ export const aboutPage = {
   Debunking health myths with a side of humor.
   Sharing expert advice that's easy to understand (and sometimes, easy to laugh at).
   Trying to convince patients that "eat your veggies" isn't just a suggestion. 🥦
-  So, sit back, relax, and let Dr. Blue be your go-to source for all things health and hilarity.`,
+  So, sit back, relax, and let Dr. Blue be your go-to source for all things health and hilarity.`,
 }
 
 export const seoData = {
