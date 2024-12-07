@@ -4,7 +4,7 @@ export const navbarData = {
 
 export const footerData = {
   author: 'Puamus Oki Babas',
-  aboutAuthor: `Hi! I am Yourbluedoctor, A writer, music enthusiast, History Buff , and Amature Chess player. Currently licenced to practice as a Medical Doctor in 🇺🇦🇳🇬🇬🇧`,
+  aboutAuthor: `Hi! I am Yourbluedoctor, A writer, music enthusiast, History Buff , and Amature Chess player. Currently licenced to practice as a Medical Doctor in 🇬🇧|🇺🇦|🇳🇬`,
   authorInterest:
     "I have a fair amount of knowledge of Music, History, and Chess. If you have an interesting idea, let's connect.",
   aboutTheSite:

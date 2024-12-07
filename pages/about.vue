@@ -1,22 +1,27 @@
 <script setup lang="ts">
 import { aboutPage, footerData, navbarData } from '~/data'
 
+const { data: aboutData } = await useAsyncData('about', () => queryContent('/about').findOne())
+
+const mainImage = computed(() => aboutData.value?.image || '/urbluedr.jpeg')
+
 useHead({
   title: 'About',
   meta: [
     {
       name: 'description',
-      content: footerData.aboutAuthor,
+      content: aboutData.value?.aboutAuthor || footerData.aboutAuthor,
     },
   ],
 })
 
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
-  title: navbarData.homeTitle,
+  headline: aboutData.value?.ogImageHeadline || 'Greetings 👋',
+  title: aboutData.value?.title || navbarData.homeTitle,
   description:
+    aboutData.value?.description ||
     'Dive into Medicine, Healthcare, lifestyle & Problem Solving with me and let us learn together.',
-  link: '/urbluedr.jpeg',
+  link: mainImage.value,
 })
 </script>
 
@@ -27,7 +32,7 @@ defineOgImageComponent('About', {
         <div class="flex justify-between">
           <div>
             <h1 class="text-xl sm:text-4xl pb-2 font-bold">
-              {{ aboutPage.title }}
+              {{ aboutData?.title || aboutPage.title }}
             </h1>
 
             <div class="my-3 space-x-2 md:space-x-3 pb-10">
@@ -58,23 +63,17 @@ defineOgImageComponent('About', {
             </div>
           </div>
           <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
-            <NuxtImg
-              src="/urbluedr.jpeg"
-              width="125"
-              height="115"
-              quality="50"
-              class="rounded-md"
-            />
+            <NuxtImg :src="mainImage" width="125" height="115" quality="50" class="rounded-md" />
           </div>
         </div>
         <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
-          {{ aboutPage.description }}
+          {{ aboutData?.description aboutPage.description }}
         </h3>
 
-        <p>{{ aboutPage.aboutMe }}</p>
+        <p>{{ aboutData?.aboutMe || aboutPage.aboutMe }}</p>
       </div>
       <div class="hidden sm:block col-span-3">
-        <NuxtImg src="/urbluedr.jpeg" width="450" height="500" quality="50" class="rounded-md" />
+        <NuxtImg :src="mainImage" width="450" height="500" quality="50" class="rounded-md" />
       </div>
     </div>
   </div>
